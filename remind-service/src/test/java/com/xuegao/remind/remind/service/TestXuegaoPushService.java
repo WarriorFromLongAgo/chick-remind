@@ -29,7 +29,7 @@ public class TestXuegaoPushService {
     }
 
     @Test
-    public void pushOther() {
-        xuegaoPushService.pushOther("# 第一条markdown消息", "# 一级标题 ## 二级标题 **optional**+description+in+markdown+阿斯顿撒打算");
+    public void pushMarkdown() {
+        xuegaoPushService.pushMarkdown("# 第一条markdown消息(标题)", "（消息）# 一级标题 ## 二级标题 **optional**+description+in+markdown+阿斯顿撒打算");
     }
 }

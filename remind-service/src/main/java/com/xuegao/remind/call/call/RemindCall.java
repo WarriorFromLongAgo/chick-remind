@@ -54,7 +54,7 @@ public interface RemindCall {
     JSONObject pushOther(
             @RequestParam(name = "text") String text,
             @RequestParam(name = "desp") String desp,
-            @RequestParam(name = "pushkey") String pushKey,
-            @RequestParam(name = "type") String msgType);
+            @RequestParam(name = "type") String msgType,
+            @RequestParam(name = "pushkey") String pushKey);
 
 }

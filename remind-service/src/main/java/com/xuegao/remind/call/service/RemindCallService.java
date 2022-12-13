@@ -71,22 +71,22 @@ public class RemindCallService {
      * @author xuegao
      * @date 2022/12/12 20:57
      */
-    public void pushOther(String pushKey,
-                          String title,
-                          String desp) {
+    public void pushMarkdown(String pushKey,
+                             String title,
+                             String desp) {
         String titleUtf8 = null;
         String despUtf8 = null;
-        try {
-            titleUtf8 = URLEncoder.encode(title, Constants.CHARSET);
-            despUtf8 = URLEncoder.encode(desp, Constants.CHARSET);
-        } catch (UnsupportedEncodingException e) {
-            log.info("[chick-remind][RemindCallService][pushOther][e={}]", e.getMessage(), e);
-        }
+
+        // titleUtf8 = URLEncoder.encode(title, Constants.CHARSET);
+        titleUtf8 = title;
+        // despUtf8 = URLEncoder.encode(desp, Constants.CHARSET);
+        despUtf8 = desp;
+
         if (StringUtils.isBlank(titleUtf8) || StringUtils.isBlank(despUtf8)) {
             log.info("[chick-remind][RemindCallService][pushOther][titleUtf8={}][despUtf8={}]", titleUtf8, despUtf8);
             return;
         }
-        JSONObject jsonObject = remindCall.pushOther(pushKey, PushDeerMsgTypeEnum.MARKDOWN.getCode(), titleUtf8, despUtf8);
+        JSONObject jsonObject = remindCall.pushOther(titleUtf8, despUtf8, PushDeerMsgTypeEnum.MARKDOWN.getCode(), pushKey);
         if (log.isDebugEnabled()) {
             log.info("[chick-remind][RemindCallService][pushOther][jsonObject={}]", jsonObject);
         }

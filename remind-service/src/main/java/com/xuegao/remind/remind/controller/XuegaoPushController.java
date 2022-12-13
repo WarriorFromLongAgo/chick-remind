@@ -24,7 +24,7 @@ public class XuegaoPushController {
 
     @RequestMapping(path = "/xuegao/pushOther", method = RequestMethod.POST)
     public void pushOther(String title, String desp) {
-        xuegaoPushService.pushOther("# 第一条markdown消息", "**optional**+description+in+markdown");
+        xuegaoPushService.pushMarkdown("# 第一条markdown消息", "**optional**+description+in+markdown");
     }
 
 }
