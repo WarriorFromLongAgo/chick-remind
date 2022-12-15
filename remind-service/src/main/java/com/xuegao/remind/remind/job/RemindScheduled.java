@@ -135,7 +135,7 @@ public class RemindScheduled {
      * @author xuegao
      * @date 2022/12/12 22:22
      */
-    @Scheduled(cron = "0 0/15 18,19 * * ? ")
+    @Scheduled(cron = "0 0/10 18,19 * * ? ")
     public void coreScheduledByEvening() {
         String nowStr = LocalDateTimeUtil.localDateTimeToStr(LocalDateTimeUtil.now());
         log.info("[chick-remind][RemindScheduled][coreScheduledByEvening][nowStr={}]", nowStr);
